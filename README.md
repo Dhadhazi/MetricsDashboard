@@ -4,6 +4,26 @@
 
 *TODO:* run `kubectl` command to show the running pods and services for the three components. Copy and paste the output or take a screenshot of the output and include it here to verify the installation
 
+screenshot: running_services.png
+
+vagrant@localhost:~> kubectl get pods
+No resources found in default namespace.
+vagrant@localhost:~> kubectl get pods --all-namespaces 
+NAMESPACE       NAME                                                     READY   STATUS             RESTARTS   AGE
+kube-system     local-path-provisioner-7ff9579c6-p9q2m                   1/1     Running            0          18m
+kube-system     metrics-server-7b4f8b595-cwdxz                           1/1     Running            0          18m
+kube-system     coredns-66c464876b-cbhmb                                 1/1     Running            0          18m
+kube-system     helm-install-traefik-khkd6                               0/1     Completed          0          18m
+kube-system     traefik-5dd496474-kp2d6                                  1/1     Running            0          17m
+monitoring      prometheus-kube-prometheus-operator-b8c8df77c-v7njt      1/1     Running            0          4m27s
+monitoring      prometheus-prometheus-node-exporter-kxl9k                1/1     Running            0          4m27s
+monitoring      prometheus-kube-state-metrics-685b975bb7-mtt69           1/1     Running            0          4m27s
+monitoring      prometheus-prometheus-kube-prometheus-prometheus-0       2/2     Running            1          4m9s
+monitoring      alertmanager-prometheus-kube-prometheus-alertmanager-0   2/2     Running            0          4m10s
+monitoring      prometheus-grafana-5dbff499ff-8db75                      2/2     Running            0          4m27s
+observability   jaeger-operator-6954c97677-4gkw9                         1/1     Running            0          3m12s
+kube-system     svclb-traefik-rrhgl                                      0/2     CrashLoopBackOff   16         17m
+
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
