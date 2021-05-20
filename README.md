@@ -8,27 +8,27 @@ screenshot: running_services.png
 
 vagrant@localhost:~> kubectl get pods
 No resources found in default namespace.
-vagrant@localhost:~> kubectl get pods --all-namespaces 
-NAMESPACE       NAME                                                     READY   STATUS             RESTARTS   AGE
-kube-system     local-path-provisioner-7ff9579c6-p9q2m                   1/1     Running            0          18m
-kube-system     metrics-server-7b4f8b595-cwdxz                           1/1     Running            0          18m
-kube-system     coredns-66c464876b-cbhmb                                 1/1     Running            0          18m
-kube-system     helm-install-traefik-khkd6                               0/1     Completed          0          18m
-kube-system     traefik-5dd496474-kp2d6                                  1/1     Running            0          17m
-monitoring      prometheus-kube-prometheus-operator-b8c8df77c-v7njt      1/1     Running            0          4m27s
-monitoring      prometheus-prometheus-node-exporter-kxl9k                1/1     Running            0          4m27s
-monitoring      prometheus-kube-state-metrics-685b975bb7-mtt69           1/1     Running            0          4m27s
-monitoring      prometheus-prometheus-kube-prometheus-prometheus-0       2/2     Running            1          4m9s
-monitoring      alertmanager-prometheus-kube-prometheus-alertmanager-0   2/2     Running            0          4m10s
-monitoring      prometheus-grafana-5dbff499ff-8db75                      2/2     Running            0          4m27s
-observability   jaeger-operator-6954c97677-4gkw9                         1/1     Running            0          3m12s
-kube-system     svclb-traefik-rrhgl                                      0/2     CrashLoopBackOff   16         17m
-
+vagrant@localhost:~> kubectl get pods --all-namespaces
+NAMESPACE       NAME                                                     READY   STATUS      RESTARTS   AGE
+kube-system     local-path-provisioner-7ff9579c6-kgnv2                   1/1     Running     0          5m4s
+kube-system     metrics-server-7b4f8b595-qm7q8                           1/1     Running     0          5m4s
+kube-system     coredns-66c464876b-bd7cs                                 1/1     Running     0          5m4s
+kube-system     helm-install-traefik-5s9jt                               0/1     Completed   0          5m5s
+kube-system     svclb-traefik-97bz8                                      2/2     Running     0          4m39s
+kube-system     traefik-5dd496474-wvsbl                                  1/1     Running     0          4m39s
+monitoring      prometheus-kube-prometheus-operator-7946cd46c7-ds957     1/1     Running     0          2m10s
+monitoring      prometheus-kube-state-metrics-5b8f9bdbbd-d4vjk           1/1     Running     0          2m10s
+monitoring      prometheus-prometheus-node-exporter-v9mrt                1/1     Running     0          2m11s
+monitoring      alertmanager-prometheus-kube-prometheus-alertmanager-0   2/2     Running     0          112s
+monitoring      prometheus-prometheus-kube-prometheus-prometheus-0       2/2     Running     1          110s
+monitoring      prometheus-grafana-7b764c9d78-rdl7c                      2/2     Running     0          2m10s
+observability   jaeger-operator-6954c97677-f65vv                         1/1     Running     0          60s
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
